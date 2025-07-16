@@ -1,10 +1,20 @@
-import React from 'react'
-import ResumeUpload from './components/ResumeUpload';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import CandidateUpload from './pages/CandidateUpload';
+import HRLogin from './pages/HRLogin';
+import HRSignup from './pages/HRSignup';
+import HRDashboard from './pages/HRDashboard';
+import HRJobPost from './pages/HRJobPost';
 
-function App() {
+export default function App() {
   return (
-   <ResumeUpload />
+    <Router>
+      <Routes>
+        <Route path="/" element={<CandidateUpload />} />
+        <Route path="/hr/login" element={<HRLogin />} />
+        <Route path="/hr/signup" element={<HRSignup />} />
+        <Route path="/hr/dashboard" element={<HRDashboard />} />
+        <Route path="/hr/post-job" element={<HRJobPost/>} />
+      </Routes>
+    </Router>
   );
 }
-
-export default App;
